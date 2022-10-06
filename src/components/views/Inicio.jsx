@@ -1,5 +1,5 @@
 import { Container, Row } from "react-bootstrap";
-import CardProducto from "./producto/adminProductos/CardProducto";
+import CardProducto from "./producto/CardProducto";
 
 const Inicio = () => {
     return (
