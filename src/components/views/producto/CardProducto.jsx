@@ -9,8 +9,8 @@ const CardProducto = () => {
           <Card.Title>Brownie</Card.Title>
           <Card.Text>
             Precio: $400
-            <hr />
           </Card.Text>
+            <hr />
           <Button variant="danger">Ver más</Button>
         </Card.Body>
       </Card>

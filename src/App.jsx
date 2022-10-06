@@ -8,20 +8,37 @@ import Footer from "./components/common/Footer";
 import DetalleProducto from "./components/views/DetalleProducto";
 import CrearProducto from "./components/views/producto/CrearProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
+import './components/app.css'
 
 function App() {
   return (
     <BrowserRouter>
+      <Menu></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
-        <Route exact path="/detalle" element={<DetalleProducto></DetalleProducto>}></Route>
-        <Route exact path="/crearProducto" element={<CrearProducto></CrearProducto>}></Route>
-        <Route exact path="/editarProducto" element={<EditarProducto></EditarProducto>}></Route>
-        <Route exact path="/menu" element={<Menu></Menu>}></Route>
-        <Route exact path="/footer" element={<Footer></Footer>}></Route>
+        <Route
+          exact
+          path="/administrador"
+          element={<Administrador></Administrador>}
+        ></Route>
+        <Route
+          exact
+          path="/detalle-producto"
+          element={<DetalleProducto></DetalleProducto>}
+        ></Route>
+        <Route
+          exact
+          path="/administrar/crear"
+          element={<CrearProducto></CrearProducto>}
+        ></Route>
+        <Route
+          exact
+          path="/administrar/editar/:id"
+          element={<EditarProducto></EditarProducto>}
+        ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }
