@@ -8,7 +8,9 @@ import Footer from "./components/common/Footer";
 import DetalleProducto from "./components/views/DetalleProducto";
 import CrearProducto from "./components/views/producto/CrearProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
-import './components/app.css'
+import "./components/app.css";
+import Login from "./components/views/Login";
+import Registrar from "./components/views/Registrar";
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
           path="/administrar/editar/:id"
           element={<EditarProducto></EditarProducto>}
         ></Route>
+        <Route exact path="/login" element={<Login></Login>}></Route>
+        <Route exact path="/registrar" element={<Registrar></Registrar>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
