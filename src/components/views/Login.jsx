@@ -8,7 +8,7 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      usuario: "",
+      email: "",
       contrasenia: "",
     },
   });
@@ -22,11 +22,11 @@ const Login = () => {
       <h2 className="display-4">Login</h2>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group className="mb-3" controlId="formBasicNombre">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
-            {...register("usuario", {
+            {...register("email", {
               required: "Este campo es obligatorio",
               pattern: {
                 value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
@@ -36,15 +36,15 @@ const Login = () => {
               minLength: {
                 value: 1,
                 message:
-                  "El nombre de usuario debe contener como minimo 1 caracteres",
+                  "El email debe contener como minimo 1 caracteres",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.usuario?.message}
+            {errors.email?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPrecio">
+        <Form.Group className="mb-3" controlId="formBasicContrasenia">
           <Form.Label>Contraseña</Form.Label>
           <Form.Control
             type="password"
