@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button, Container, Table } from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 import { consultarAPI } from "../helpers/queries";
 import ItemProducto from "./producto/ItemProducto";
+import {Link} from 'react-router-dom'
 
 const Administrador = () => {
   
@@ -31,7 +32,7 @@ const Administrador = () => {
           <h2 className="display-4">Prouctos disponibles</h2>
         </aside>
         <aside>
-          <Button>Agregar</Button>
+          <Link className="btn btn-primary" to='/administrar/crear'>Agregar</Link>
         </aside>
       </div>
       <hr />
