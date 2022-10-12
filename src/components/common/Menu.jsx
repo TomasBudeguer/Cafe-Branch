@@ -22,7 +22,7 @@ const Menu = () => {
             <NavLink to="/login" className="nav-item nav-link btn btn-primary me-2">
               Login
             </NavLink>
-            <NavLink to="/registro" className="nav-item nav-link btn btn-success">
+            <NavLink to="/registrar" className="nav-item nav-link btn btn-success">
               Registro
             </NavLink>
           </Nav>
