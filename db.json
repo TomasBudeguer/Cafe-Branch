@@ -29,13 +29,6 @@
       "id": 5
     },
     {
-      "nombreProducto": "te de prueba",
-      "precio": 300,
-      "categoria": "bebida caliente",
-      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "id": 6
-    },
-    {
       "nombreProducto": "Licuado",
       "precio": "250",
       "imagen": "https://i.ibb.co/Yj1bF0W/remera-Bridgemere.png",
