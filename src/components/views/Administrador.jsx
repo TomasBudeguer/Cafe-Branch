@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { consultarAPI } from "../helpers/queries";
 import ItemProducto from "./producto/ItemProducto";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
-  
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-
     // opcion 1
-    consultarAPI().then((respuesta)=>{
-      console.log(respuesta)
-      setProductos(respuesta)
-    })
+    consultarAPI().then((respuesta) => {
+      console.log(respuesta);
+      setProductos(respuesta);
+    });
 
     // opcion 2
     // const consultaPrueba = async()=>{
@@ -22,7 +20,6 @@ const Administrador = () => {
     //   console.log(prueba)
     // }
     // consultaPrueba()
-
   }, []);
 
   return (
@@ -32,7 +29,9 @@ const Administrador = () => {
           <h2 className="display-4">Prouctos disponibles</h2>
         </aside>
         <aside>
-          <Link className="btn btn-primary" to='/administrar/crear'>Agregar</Link>
+          <Link className="btn btn-primary" to="/administrar/crear">
+            Agregar
+          </Link>
         </aside>
       </div>
       <hr />
@@ -48,10 +47,9 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            productos.map((producto)=> <ItemProducto key={producto.id} producto={producto}></ItemProducto>)
-          }
-          
+          {productos.map((producto) => (
+            <ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto>
+          ))}
         </tbody>
       </Table>
     </Container>
