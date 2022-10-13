@@ -28,9 +28,7 @@ export const crearProductoAPI = async (producto) => {
       },
       body: JSON.stringify(producto),
     });
-    const listaProductos = await respuesta.json();
-    // console.log(listaProductos)
-    return listaProductos;
+    return respuesta;
   } catch (error) {
     console.log(error);
   }

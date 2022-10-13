@@ -1,11 +1,15 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { crearProductoAPI } from "../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: {
       nombreProducto: "",
@@ -15,9 +19,29 @@ const CrearProducto = () => {
     },
   });
 
+  // inicializar a useNavigate
+  const navegacion = useNavigate();
+
   const onSubmit = (datos) => {
+    // los datos ya esstan validados
     console.log(datos);
-    console.log("desde nuestra funcion submit");
+    // enviar los datos a la API
+    crearProductoAPI(datos).then((respuesta) => {
+      if (respuesta.status === 201) {
+        // el producto se creo
+        Swal.fire(
+          "Producto creado",
+          "El producto fue creado correctamente",
+          "success"
+        );
+        reset();
+        // redireccionar 
+        navegacion('/administrador')
+      } else {
+        // mostrar mensaje de error al ususario
+        Swal.fire("Ocurrio un error", "Vuelva a intentarlo mas tarde", "error");
+      }
+    });
   };
 
   return (
@@ -76,7 +100,7 @@ const CrearProducto = () => {
               required: "La URL de la imagen es obligatoria",
               pattern: {
                 value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
-                message:'Debe ingresar una URL valida'
+                message: "Debe ingresar una URL valida",
               },
             })}
           />
@@ -86,9 +110,11 @@ const CrearProducto = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicNombre">
           <Form.Label>Categoria*</Form.Label>
-          <Form.Select {...register('categoria',{
-            required:'Debe seleccionar una categoria'
-          })}>
+          <Form.Select
+            {...register("categoria", {
+              required: "Debe seleccionar una categoria",
+            })}
+          >
             <option value="">Seleccione una opcion</option>
             <option value="bebida caliente">Bebida caliente</option>
             <option value="bebida fria">Bebida fria</option>

@@ -20,6 +20,41 @@
       "categoria": "bebida fria",
       "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "id": 3
+    },
+    {
+      "nombreProducto": "te de prueba",
+      "precio": 300,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": 5
+    },
+    {
+      "nombreProducto": "te de prueba",
+      "precio": 300,
+      "categoria": "bebida caliente",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "id": 6
+    },
+    {
+      "nombreProducto": "Licuado",
+      "precio": "250",
+      "imagen": "https://i.ibb.co/Yj1bF0W/remera-Bridgemere.png",
+      "categoria": "bebida fria",
+      "id": 7
+    },
+    {
+      "nombreProducto": "Facturas|",
+      "precio": "50",
+      "imagen": "http://127.0.0.1:5500/pages/administrador.html",
+      "categoria": "dulce",
+      "id": 8
+    },
+    {
+      "nombreProducto": "factura con dulce de leche",
+      "precio": "80",
+      "imagen": "http://127.0.0.1:5500/pages/administrador.html",
+      "categoria": "dulce",
+      "id": 9
     }
   ]
 }
