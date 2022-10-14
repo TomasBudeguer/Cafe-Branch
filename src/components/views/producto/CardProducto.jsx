@@ -1,14 +1,14 @@
 import { Col, Card, Button } from "react-bootstrap";
 
-const CardProducto = () => {
+const CardProducto = ({ producto, setProductos }) => {
   return (
     <Col sm={12} md={4} lg={3}>
-      <Card>
-        <Card.Img variant="top" src="https://es.cravingsjournal.com/wp-content/uploads/2018/10/brownies-de-chocolate-5-500x375.jpg" />
+      <Card className="mb-4">
+        <Card.Img variant="top" src={producto.imagen} />
         <Card.Body>
-          <Card.Title>Brownie</Card.Title>
+          <Card.Title>{producto.nombreProducto}</Card.Title>
           <Card.Text>
-            Precio: $400
+            Precio: ${producto.precio}
           </Card.Text>
             <hr />
           <Button variant="danger">Ver más</Button>
