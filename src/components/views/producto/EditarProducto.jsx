@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 const EditarProducto = () => {
+  // useEffect(() => {
+  //   first;
+
+  //   return () => {
+  //     second;
+  //   };
+  // }, [third]);
+
   const {
     register,
     handleSubmit,
