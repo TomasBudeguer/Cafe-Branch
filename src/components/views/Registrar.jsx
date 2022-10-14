@@ -1,11 +1,14 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearUsuarioAPI } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const Registrar = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm({
     defaultValues: {
       nombre: "",
@@ -17,6 +20,20 @@ const Registrar = () => {
 
   const onSubmit = (datos) => {
     console.log(datos);
+    crearUsuarioAPI(datos).then((respuesta) => {
+      if (respuesta.status === 201) {
+        // el usuario se creo
+        Swal.fire(
+          "Usuario creado",
+          "El usuario fue creado correctamente",
+          "success"
+        );
+        reset();
+      } else {
+        // mostrar mensaje de error al ususario
+        Swal.fire("Ocurrio un error", "Vuelva a intentarlo mas tarde", "error");
+      }
+    });
   };
 
   return (

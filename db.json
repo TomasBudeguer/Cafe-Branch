@@ -20,6 +20,29 @@
       "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/348/392/products/img_72981-62963efbcb4aa5a9fe16551323235197-1024-1024.jpg",
       "categoria": "bebida caliente",
       "id": 3
+    },
+    {
+      "nombreProducto": "licuado",
+      "precio": "450",
+      "imagen": "http://127.0.0.1:5500/pages/administrador.html",
+      "categoria": "bebida fria",
+      "id": 4
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Tomi",
+      "apellido": "Budeguer",
+      "email": "tomibudeguer20@gmail.com",
+      "contrasenia": "Holamundo1",
+      "id": 1
+    },
+    {
+      "nombre": "Francisco",
+      "apellido": "Budeguer",
+      "email": "francisco@gmail.com",
+      "contrasenia": "Francisco123",
+      "id": 2
     }
   ]
 }
