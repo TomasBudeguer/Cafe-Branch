@@ -24,9 +24,16 @@
     {
       "nombreProducto": "licuado",
       "precio": "450",
-      "imagen": "http://127.0.0.1:5500/pages/administrador.html",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "bebida fria",
       "id": 4
+    },
+    {
+      "nombreProducto": "facturas con crema",
+      "precio": "70",
+      "imagen": "https://i.ibb.co/8X55TFh/remera-Malibu.png",
+      "categoria": "dulce",
+      "id": 5
     }
   ],
   "usuarios": [
