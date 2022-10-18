@@ -1,20 +1,34 @@
 import { useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import { obtenerProductoAPI } from "../../helpers/queries";
 
 const EditarProducto = () => {
-  // useEffect(() => {
-  //   first;
+  // traer el parametro de la ruta
+  const { id } = useParams();
 
-  //   return () => {
-  //     second;
-  //   };
-  // }, [third]);
+  useEffect(() => {
+    obtenerProductoAPI(id).then((respuesta)=>{
+      if(respuesta.status === 200){
+        // cargar los datos de la respuesta en el formulario
+        setValue('nombreProducto', respuesta.dato.nombreProducto)
+        setValue('precio', respuesta.dato.precio)
+        setValue('imagen', respuesta.dato.imagen)
+        setValue('categoria', respuesta.dato.categoria)
+        console.log(respuesta)
+      }else{
+        Swal.fire('Ocurrio un error', 'Intente este paso en unos minutos', 'error')
+      }
+    })
+  },[]);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm({
     defaultValues: {
       nombreProducto: "",
@@ -24,8 +38,9 @@ const EditarProducto = () => {
     },
   });
 
-  const onSubmit = (datos) => {
-    console.log(datos);
+  const onSubmit = (producto) => {
+    console.log(producto);
+    // aqui quiero enviar la peticion (PUT) para editar los datos del producto
   };
 
   return (
@@ -83,7 +98,7 @@ const EditarProducto = () => {
             {...register("imagen", {
               required: "La URL de la imagen es obligatoria",
               pattern: {
-                value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
+                value: /^https?:\/\/[\w]+(\.[\w]+)+[/#?]?.*$/,
                 message: "Debe ingresar una URL valida",
               },
             })}
