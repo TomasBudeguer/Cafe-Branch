@@ -3,8 +3,8 @@
     {
       "nombreProducto": "café",
       "precio": 300,
-      "categoria": "bebida caliente",
       "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "bebida caliente",
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
     {
       "nombreProducto": "te",
       "precio": "300",
-      "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/348/392/products/img_72981-62963efbcb4aa5a9fe16551323235197-1024-1024.jpg",
+      "imagen": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "bebida caliente",
       "id": 3
     },
