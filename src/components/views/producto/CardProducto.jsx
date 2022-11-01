@@ -12,7 +12,7 @@ const CardProducto = ({ producto, setProductos }) => {
             Precio: ${producto.precio}
           </Card.Text>
             <hr />
-          <Link className="btn btn-danger"to={`/detalle-producto/${producto.id}`}>Ver más</Link>        
+          <Link className="btn btn-danger"to={`/detalle-producto/${producto._id}`}>Ver más</Link>        
         </Card.Body>
       </Card>
     </Col>

@@ -17,7 +17,7 @@ const ItemProducto = ({ producto, setProductos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // realizar la consulta a la API
-        borrarProductoAPI(producto.id).then((respuesta) => {
+        borrarProductoAPI(producto._id).then((respuesta) => {
           if (respuesta.status === 200) {
             // actualizar el state producto o la tabla
             consultarAPI().then((respuesta) => {
@@ -43,7 +43,7 @@ const ItemProducto = ({ producto, setProductos }) => {
 
   return (
     <tr>
-      <td>{producto.id}</td>
+      <td>{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td>${producto.precio}</td>
       <td>{producto.imagen}</td>
@@ -51,7 +51,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       <td>
         <Link
           className="btn btn-warning me-2 mb-1"
-          to={`/administrar/editar/${producto.id}`}
+          to={`/administrar/editar/${producto._id}`}
         >
           Editar
         </Link>

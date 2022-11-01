@@ -1,6 +1,7 @@
 // archivo que nos sirve para hacer las consultas a la api (json-server)
 
-const URL = "http://localhost:3004/productos";
+// const URL = "http://localhost:3004/productos"; //json-server
+const URL = "http://localhost:4000/apicafe/productos";
 const URLusuarios = "http://localhost:3004/usuarios";
 
 // tipos de peticiones
